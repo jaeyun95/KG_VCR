@@ -5,6 +5,8 @@ http://kips.or.kr/bbs/confn/article/1024
 지식 그래프를 이용한 영상 기반 상식 추론(Visual Commonsense Reasoning with Knowledge Graph)
 
 
+![Alt text](/Architecture/architecture.jpg)
+
 keyword
 
 #VisualCommonsenseReasoning #VisualQuestionAnswering #KnowledgeProcessing #GraphConvolutionalNetwork #ConceptNet #ExternalKnowledgeReasoning
