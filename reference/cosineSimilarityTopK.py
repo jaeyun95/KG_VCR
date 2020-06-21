@@ -2,6 +2,16 @@ import torch
 import torch.nn.functional as F
 import torch.nn
 
+
+#define mlp
+final_mlp = torch.nn.Sequential(
+            torch.nn.Dropout(0.3, inplace=False),
+            torch.nn.Linear(768, 512),
+            torch.nn.ReLU(inplace=True),
+            torch.nn.Dropout(0.3, inplace=False),
+            torch.nn.Linear(512, 1),
+        )
+		
 #define cosineSimilarity
 cos = torch.nn.CosineSimilarity(dim=0, eps=1e-6)
 
@@ -15,14 +25,14 @@ ex4 = torch.randn(31,768)
 final = torch.zeros([3,1])
 
 #compare ex1 and (ex2, ex3, ex4)
-output1 = torch.tensordot(ex1,ex2)
-output2 = torch.tensordot(ex1,ex3)
-output3 = torch.tensordot(ex1,ex4)
+output1 = cos(ex1,ex2)
+output2 = cos(ex1,ex3)
+output3 = cos(ex1,ex4)
 
 #insert output vector
-final[0,:] = output1
-final[1,:] = output2
-final[2,:] = output3
+final[0,:] = final_mlp(output1)
+final[1,:] = final_mlp(output2)
+final[2,:] = final_mlp(output3)
 
 #softmax
 sort_ = F.softmax(final, dim=0)
