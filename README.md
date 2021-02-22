@@ -7,6 +7,6 @@ http://kips.or.kr/bbs/confn/article/1024
 
 ![architecture](/Architecture/architecture.JPG)
 
-keyword
+keywords
 
 #VisualCommonsenseReasoning #VisualQuestionAnswering #KnowledgeProcessing #GraphConvolutionalNetwork #ConceptNet #ExternalKnowledgeReasoning
